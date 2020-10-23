@@ -1,6 +1,6 @@
 import unittest
 from classes.song import *
 
-class TestGuest(unittest.TestCase):
+class TestSong(unittest.TestCase):
     def setUp(self):
         self.song = Song()
