@@ -5,13 +5,7 @@ from classes.song import *
 
 class TestRoom(unittest.TestCase):
     def setUp(self):
-        self.room = Room("one", 10)
 
-        self.room_1 = Room("one", 10)
-        self.room_2 = Room("two", 12)
-        self.room_3 = Room("three", 15)
-        self.room_4 = Room("four", 20)
-        rooms = [self.room_1, self.room_2, self.room_3, self.room_4]
 
         self.guest_1 = Guest("Finn", 12)
         self.guest_2 = Guest("Jake", 28)
@@ -27,6 +21,14 @@ class TestRoom(unittest.TestCase):
         self.song_6 = Song("Achy Breaky Heart", "Billy Ray Cyrus", "Country")
         songs = [self.song_1, self.song_2, self.song_3, self.song_4, self.song_5, self.song_6]
 
+        self.room = Room("one", 10, songs)
+        self.room_1 = Room("one", 10, songs)
+        self.room_2 = Room("two", 12, songs)
+        self.room_3 = Room("three", 15, songs)
+        self.room_4 = Room("four", 20, songs)
+        rooms = [self.room_1, self.room_2, self.room_3, self.room_4]
+
+
 
     def test_room_has_name(self):
         self.assertEqual("one", self.room.name)
@@ -40,16 +42,21 @@ class TestRoom(unittest.TestCase):
     def test_starts_with_no_guests(self):
         self.assertEqual(0, self.room.guest_count())
 
-    def test_can_add_guest_to_room(self):
+    def test_can_check_in_guest_to_room(self):
         guest = Guest("Lumpy Space Princess", 14)
-        self.room.add_guest(guest)
+        self.room.check_in_guest(guest)
         self.assertEqual(1, self.room.guest_count())
 
-    def test_can_remove_guest_from_room(self):
+    def test_can_check_out_guest_from_room(self):
         guest = Guest("Lumpy Space Princess", 14)
-        self.room.add_guest(guest)
-        self.room.remove_guest(guest)
+        self.room.check_in_guest(guest)
+        self.room.check_out_guest(guest)
         self.assertEqual(0, self.room.guest_count())
+
+    def test_room_song_count(self):
+        self.assertEqual(6, self.room.song_count())
+
+
     
 
     # def test_add_song_to_room(self):
