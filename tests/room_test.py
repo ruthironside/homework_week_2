@@ -54,12 +54,9 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(0, self.room.guest_count())
 
     def test_room_song_count(self):
-        self.assertEqual(6, self.room.song_count())
+        self.assertEqual(6, self.room_4.song_count())
 
-
-    
-
-    # def test_add_song_to_room(self):
-    #     song = Song("Ring of Fire", "Johnny Cash", "Country")
-    #     self.song.add_song(song)
-    #     self.assertEqual(1, self.room.add_song())
+    def test_add_song_to_room(self):
+        song = Song("Ring of Fire", "Johnny Cash", "Country")
+        self.room.add_song_to_room(song)
+        self.assertEqual(7, self.room_1.song_count())

@@ -21,5 +21,5 @@ class Room:
         return len(self.songs)
 
 
-    # def add_song_to_room(self, song):
-    #     self.song_list.append(song)
+    def add_song_to_room(self, song):
+        self.songs.append(song)
