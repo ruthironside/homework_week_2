@@ -1,6 +1,4 @@
-import unittest
-from src.guest import Guest
-from src.room import Room
-from src.song import Song
-
-class TestCareokeClub(unittest.TestCase):
+class CareokeClub:
+    def __init__(self, entry_fee):
+        self.entry_fee = entry_fee
+    
