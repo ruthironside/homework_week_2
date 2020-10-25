@@ -7,10 +7,10 @@ class TestRoom(unittest.TestCase):
     def setUp(self):
 
 
-        self.guest_1 = Guest("Finn", 12, 15)
-        self.guest_2 = Guest("Jake", 28, 100)
-        self.guest_3 = Guest("Ice King", 1043, 55)
-        self.guest_4 = Guest("BMO", 1000, 2000)
+        self.guest_1 = Guest("Batman", 28, 15)
+        self.guest_2 = Guest("Superman", 30, 100)
+        self.guest_3 = Guest("Hulk", 41, 55)
+        self.guest_4 = Guest("Wonder Woman", 1000, 2000)
         guests = [self.guest_1, self.guest_2, self.guest_3, self.guest_4]
 
         self.song_1 = Song("Wannabe", "Spice Girls", "Pop")
@@ -43,12 +43,12 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(0, self.room.guest_count())
 
     def test_can_check_in_guest_to_room(self):
-        guest = Guest("Lumpy Space Princess", 14, 400)
+        guest = Guest("Spiderman", 22, 400)
         self.room.check_in_guest(guest)
         self.assertEqual(1, self.room.guest_count())
 
     def test_can_check_out_guest_from_room(self):
-        guest = Guest("Lumpy Space Princess", 14, 400)
+        guest = Guest("Spider Man", 22, 400)
         self.room.check_in_guest(guest)
         self.room.check_out_guest(guest)
         self.assertEqual(0, self.room.guest_count())

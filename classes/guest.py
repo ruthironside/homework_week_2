@@ -4,5 +4,8 @@ class Guest:
         self.age = age
         self.money = money
 
-    # def sufficient_funds(self, entry_fee):
-    #     return self.money >= entry_fee
+    # def sufficient_funds(self, entryfee):
+    #     return self.money >= entryfee
+
+    # def can_afford_entryfee(self, entryfee):
+    #     return self.guest.money >= self.careoke_club.entryfee
